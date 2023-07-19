@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-backend-app
+  labels:
+    app: python-backend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-backend-app
+  template:
+    metadata:
+      labels:
+        app: python-backend-app
+    spec:
+      containers:
+        - name: python-backend-app
+          image: gcr.io/PROJECT_ID/IMAGE:TAG
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8888
