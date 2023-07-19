@@ -12,7 +12,7 @@ import joblib
 import sklearn
 import pickle
 
-app = Flask(_name_)
+app = Flask(__name__)
 cors = CORS(app)
 
 
@@ -235,5 +235,5 @@ def predict_crime_random_forest():
         return jsonify({'prediction': prediction[0]})
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(port=8888)
